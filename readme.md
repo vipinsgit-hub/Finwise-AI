@@ -71,10 +71,10 @@ mindset coach that guides you toward better money habits.
 - Recharts / Victory Native (charts)
 
 ### **Backend**
-- Node.js (Express) **or** Python (FastAPI)
+- Python (FastAPI)
 
 ### **Database**
-- MongoDB **or** PostgreSQL
+- PostgreSQL
 
 ### **AI Layer**
 - Python  
