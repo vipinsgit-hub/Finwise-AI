@@ -1,0 +1,23 @@
+{
+  "name": "finwise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:client": "cd client && npm run dev",
+    "start:server": "cd server && npm run dev",
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vipinsgit-hub/Finwise-AI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vipinsgit-hub/Finwise-AI/issues"
+  },
+  "homepage": "https://github.com/vipinsgit-hub/Finwise-AI#readme"
+}
