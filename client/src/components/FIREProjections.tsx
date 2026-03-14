@@ -46,7 +46,7 @@ const FIREProjections: React.FC<FIREProjectionsProps> = ({ data, fireNumber }) =
             tick={{ fill: '#6B7280' }}
           />
           <Tooltip 
-            formatter={(value: number) => [`₹${value.toLocaleString()}`, 'Balance']}
+            formatter={(value: any) => [`₹${Number(value).toLocaleString()}`, 'Balance']}
             labelFormatter={(label) => `Age: ${label}`}
             contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 20px -2px rgba(0, 0, 0, 0.1)' }}
           />

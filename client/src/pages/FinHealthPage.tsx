@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import FinHealthForm from '../components/FinHealthForm';
 import FinHealthResult from '../components/FinHealthResult';
 import { profileService } from '../services/api';
+import Button from '../components/Button';
 
 const FinHealthPage: React.FC = () => {
   const [profile, setProfile] = useState<any>(null);
@@ -68,7 +67,7 @@ function scoreIsReady(profile: any) {
 }
 
 // Fallback generator if swot didn't come back (e.g. from getProfile)
-function generatePlaceholderSwot(profile: any) {
+function generatePlaceholderSwot(_profile: any) {
   // This could be a call to the backend or a frontend mirror of the logic
   return {
     strengths: ['Income tracked'],
@@ -77,7 +76,5 @@ function generatePlaceholderSwot(profile: any) {
     threats: ['N/A']
   };
 }
-
-import Button from '../components/Button';
 
 export default FinHealthPage;

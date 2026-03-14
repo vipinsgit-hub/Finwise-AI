@@ -1,4 +1,6 @@
+import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { profileService } from '../services/api';
 import { Shield, Flame, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
