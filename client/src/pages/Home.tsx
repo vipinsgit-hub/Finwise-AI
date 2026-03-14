@@ -13,16 +13,25 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center lg:text-left lg:max-w-2xl">
-            <h1 className="text-5xl lg:text-7xl font-bold text-text leading-tight mb-8">
-              Understand Your <span className="text-accent">Money.</span> Improve Your <span className="text-primary">Financial Health.</span>
-            </h1>
-            <p className="text-xl text-gray-500 mb-10 leading-relaxed">
-              FinWise AI helps everyday people track their financial well-being with a simple score and a clear path to retirement.
-            </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
-              <Button size="lg">Get Started Free</Button>
-              <Button size="lg" variant="outline">How it Works</Button>
+          <div className="flex flex-col lg:flex-row items-center justify-between">
+            <div className="text-center lg:text-left lg:max-w-2xl">
+              <h1 className="text-5xl lg:text-7xl font-bold text-text leading-tight mb-8">
+                Understand Your <span className="text-accent">Money.</span> Improve Your <span className="text-primary">Financial Health.</span>
+              </h1>
+              <p className="text-xl text-gray-500 mb-10 leading-relaxed">
+                FinWise AI helps everyday people track their financial well-being with a simple score and a clear path to retirement.
+              </p>
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start">
+                <Button size="lg">Get Started Free</Button>
+                <Button size="lg" variant="outline">How it Works</Button>
+              </div>
+            </div>
+            <div className="hidden lg:block w-1/2 mt-12 lg:mt-0 animate-float">
+              <img 
+                src="/finwise_hero_illustration.png" 
+                alt="FinWise AI Illustration" 
+                className="w-full h-auto drop-shadow-2xl translate-x-10" 
+              />
             </div>
           </div>
         </div>

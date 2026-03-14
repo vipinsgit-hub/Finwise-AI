@@ -89,6 +89,25 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       )}
+      {/* Admin Card */}
+      {user?.role === 'admin' && (
+        <div className="bg-white p-8 rounded-2xl shadow-soft border-t-4 border-text col-span-1 md:col-span-2">
+          <div className="flex justify-between items-center mb-6">
+            <div className="flex items-center space-x-4">
+              <div className="bg-text/10 p-3 rounded-xl text-text">
+                <Shield size={24} />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-text">Admin Control Room</h3>
+                <p className="text-sm text-gray-500">Manage users, blogs, and inquiries.</p>
+              </div>
+            </div>
+            <Link to="/dashboard/admin">
+              <Button variant="accent">Open Admin Board <ArrowRight size={18} className="ml-2" /></Button>
+            </Link>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

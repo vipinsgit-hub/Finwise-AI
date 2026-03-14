@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TrendingUp, User, Menu, X } from 'lucide-react';
-import Button from '../Button';
+import { TrendingUp, Menu, X, Shield } from 'lucide-react';
+import Button from './Button';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const { user } = useAuth();
 
   return (
     <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
@@ -25,6 +27,11 @@ const Navbar: React.FC = () => {
             <Link to="/about" className="text-text font-medium hover:text-accent transition-soft">About</Link>
             <Link to="/blog" className="text-text font-medium hover:text-accent transition-soft">Blog</Link>
             <Link to="/contact" className="text-text font-medium hover:text-accent transition-soft">Contact</Link>
+            {user?.role === 'admin' && (
+              <Link to="/dashboard/admin" className="text-accent font-bold hover:brightness-110 transition-soft flex items-center">
+                <Shield size={18} className="mr-1" /> Admin
+              </Link>
+            )}
             <div className="flex items-center space-x-4">
               <Link to="/login">
                 <Button variant="ghost">Login</Button>
