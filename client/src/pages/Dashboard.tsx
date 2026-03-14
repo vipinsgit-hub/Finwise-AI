@@ -1,14 +1,11 @@
-import React, { useEffect, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-import { profileService } from '../services/api';
-import { Shield, Flame, TrendingUp, ArrowRight } from 'lucide-react';
+import { Shield, Flame, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 
 const Dashboard: React.FC = () => {
   const { user } = useAuth();
   const [profile, setProfile] = useState<any>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProfile = async () => {
@@ -17,8 +14,6 @@ const Dashboard: React.FC = () => {
         setProfile(data);
       } catch (err) {
         console.error('Failed to fetch profile', err);
-      } finally {
-        setLoading(false);
       }
     };
     fetchProfile();
