@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { adminService } from '../services/api';
-import { Mail, Trash2, CheckCircle, Clock } from 'lucide-react';
+import { Mail, CheckCircle } from 'lucide-react';
 
 const AdminInquiries: React.FC = () => {
   const [messages, setMessages] = useState<any[]>([]);
