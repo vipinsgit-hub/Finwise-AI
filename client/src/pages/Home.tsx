@@ -1,13 +1,13 @@
 import React from 'react';
 import Button from '../components/Button';
-import { ArrowRight, Shield, Zap, BarChart3 } from 'lucide-react';
+import { Shield, Zap, BarChart3 } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
-      <SEO 
-        title="Understand Your Money. Improve Your Financial Health" 
+      <SEO
+        title="Understand Your Money. Improve Your Financial Health"
         description="FinWise AI helps you understand your financial health using a FinHealth Score and a FIRE calculator. Simple, beginner-friendly, and powerful."
       />
       {/* Hero Section */}
@@ -27,15 +27,15 @@ const Home: React.FC = () => {
               </div>
             </div>
             <div className="hidden lg:block w-1/2 mt-12 lg:mt-0 animate-float">
-              <img 
-                src="/finwise_hero_illustration.png" 
-                alt="FinWise AI Illustration" 
-                className="w-full h-auto drop-shadow-2xl translate-x-10" 
+              <img
+                src="/finwise_hero_illustration.png"
+                alt="FinWise AI Illustration"
+                className="w-full h-auto drop-shadow-2xl translate-x-10"
               />
             </div>
           </div>
         </div>
-        
+
         {/* Background blobs */}
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl -z-10"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-3xl -z-10"></div>
