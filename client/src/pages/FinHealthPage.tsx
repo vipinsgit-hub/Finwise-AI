@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+import FinHealthForm from '../components/FinHealthForm';
 import FinHealthResult from '../components/FinHealthResult';
 import { profileService } from '../services/api';
 import Button from '../components/Button';
