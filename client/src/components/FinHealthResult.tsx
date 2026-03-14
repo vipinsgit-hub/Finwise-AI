@@ -1,5 +1,5 @@
 import React from 'react';
-import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 import { ShieldCheck, AlertCircle, Lightbulb, Zap } from 'lucide-react';
 
 interface FinHealthResultProps {
@@ -38,9 +38,9 @@ const FinHealthResult: React.FC<FinHealthResultProps> = ({ score, swot, data }) 
             <span className={`text-5xl font-black ${getScoreColor()}`}>{score}</span>
           </div>
           <p className="mt-6 text-gray-500">
-            {score >= 80 ? 'Excellent! You are on a solid financial track.' : 
-             score >= 50 ? 'Good, but there is room for improvement.' : 
-             'Attention needed to improve your financial security.'}
+            {score >= 80 ? 'Excellent! You are on a solid financial track.' :
+              score >= 50 ? 'Good, but there is room for improvement.' :
+                'Attention needed to improve your financial security.'}
           </p>
         </div>
 
@@ -59,7 +59,7 @@ const FinHealthResult: React.FC<FinHealthResultProps> = ({ score, swot, data }) 
                   paddingAngle={5}
                   dataKey="value"
                 >
-                  {pieData.map((entry, index) => (
+                  {pieData.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                   ))}
                 </Pie>
