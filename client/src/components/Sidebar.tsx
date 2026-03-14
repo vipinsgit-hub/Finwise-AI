@@ -1,17 +1,17 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, HeartPulse, Flame, User, LogOut, TrendingUp } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
-import { cn } from '../utils/cn';
-
 const Sidebar: React.FC = () => {
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
 
   const navItems = [
     { title: 'Overview', icon: LayoutDashboard, path: '/dashboard' },
     { title: 'FinHealth', icon: HeartPulse, path: '/dashboard/finhealth' },
     { title: 'FIRE Calc', icon: Flame, path: '/dashboard/fire' },
     { title: 'Profile', icon: User, path: '/dashboard/profile' },
+  ];
+
+  const adminItems = [
+    { title: 'Admin Home', icon: TrendingUp, path: '/dashboard/admin' },
+    { title: 'Manage Blogs', icon: FileText, path: '/dashboard/admin/blogs' },
+    { title: 'Inquiries', icon: Mail, path: '/dashboard/admin/messages' },
   ];
 
   return (
@@ -23,8 +23,46 @@ const Sidebar: React.FC = () => {
         <span className="text-xl font-bold text-text">FinWise AI</span>
       </div>
 
-      <nav className="flex-grow px-4 mt-8 space-y-2">
+      <nav className="flex-grow px-4 mt-8 space-y-2 overflow-y-auto">
+        <p className="px-4 text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">User Menu</p>
         {navItems.map((item) => (
+          <NavLink
+            key={item.path}
+            to={item.path}
+            end={item.path === '/dashboard'}
+            className={({ isActive }) => cn(
+              "flex items-center space-x-3 px-4 py-3 rounded-xl transition-soft font-medium",
+              isActive 
+                ? "bg-primary/10 text-primary" 
+                : "text-gray-500 hover:bg-gray-50 hover:text-text"
+            )}
+          >
+            <item.icon size={20} />
+            <span>{item.title}</span>
+          </NavLink>
+        ))}
+
+        {user?.role === 'admin' && (
+          <div className="pt-8">
+            <p className="px-4 text-[10px] font-black uppercase tracking-widest text-gray-400 mb-2">Admin Menu</p>
+            {adminItems.map((item) => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({ isActive }) => cn(
+                  "flex items-center space-x-3 px-4 py-3 rounded-xl transition-soft font-medium",
+                  isActive 
+                    ? "bg-accent/10 text-accent" 
+                    : "text-gray-500 hover:bg-gray-50 hover:text-text"
+                )}
+              >
+                <item.icon size={20} />
+                <span>{item.title}</span>
+              </NavLink>
+            ))}
+          </div>
+        )}
+      </nav>
           <NavLink
             key={item.path}
             to={item.path}

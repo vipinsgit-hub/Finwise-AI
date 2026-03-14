@@ -61,4 +61,35 @@ export const profileService = {
   }
 };
 
+export const adminService = {
+  getStats: async () => {
+    const response = await api.get('/admin/stats');
+    return response.data;
+  },
+  getBlogs: async () => {
+    const response = await api.get('/admin/blogs');
+    return response.data;
+  },
+  createBlog: async (blogData: any) => {
+    const response = await api.post('/admin/blogs', blogData);
+    return response.data;
+  },
+  updateBlog: async (id: string, blogData: any) => {
+    const response = await api.put(`/admin/blogs/${id}`, blogData);
+    return response.data;
+  },
+  deleteBlog: async (id: string) => {
+    const response = await api.delete(`/admin/blogs/${id}`);
+    return response.data;
+  },
+  getMessages: async () => {
+    const response = await api.get('/admin/messages');
+    return response.data;
+  },
+  markMessageRead: async (id: string) => {
+    const response = await api.put(`/admin/messages/${id}/read`);
+    return response.data;
+  }
+};
+
 export default api;

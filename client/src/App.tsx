@@ -9,6 +9,10 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import FinHealthPage from './pages/FinHealthPage';
 import FIREPage from './pages/FIREPage';
+import AdminRoute from './components/AdminRoute';
+import AdminDashboard from './pages/AdminDashboard';
+import AdminBlogs from './pages/AdminBlogs';
+import AdminInquiries from './pages/AdminInquiries';
 
 function App() {
   return (
@@ -24,6 +28,11 @@ function App() {
           <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout><Dashboard /></DashboardLayout></ProtectedRoute>} />
           <Route path="/dashboard/finhealth" element={<ProtectedRoute><DashboardLayout><FinHealthPage /></DashboardLayout></ProtectedRoute>} />
           <Route path="/dashboard/fire" element={<ProtectedRoute><DashboardLayout><FIREPage /></DashboardLayout></ProtectedRoute>} />
+
+          {/* Admin Routes */}
+          <Route path="/dashboard/admin" element={<AdminRoute><DashboardLayout><AdminDashboard /></DashboardLayout></AdminRoute>} />
+          <Route path="/dashboard/admin/blogs" element={<AdminRoute><DashboardLayout><AdminBlogs /></DashboardLayout></AdminRoute>} />
+          <Route path="/dashboard/admin/messages" element={<AdminRoute><DashboardLayout><AdminInquiries /></DashboardLayout></AdminRoute>} />
         </Routes>
       </Router>
     </AuthProvider>
