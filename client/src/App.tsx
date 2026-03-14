@@ -14,6 +14,7 @@ import AdminRoute from './components/AdminRoute';
 import AdminDashboard from './pages/AdminDashboard';
 import AdminBlogs from './pages/AdminBlogs';
 import AdminInquiries from './pages/AdminInquiries';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout><Dashboard /></DashboardLayout></ProtectedRoute>} />
             <Route path="/dashboard/finhealth" element={<ProtectedRoute><DashboardLayout><FinHealthPage /></DashboardLayout></ProtectedRoute>} />
             <Route path="/dashboard/fire" element={<ProtectedRoute><DashboardLayout><FIREPage /></DashboardLayout></ProtectedRoute>} />
+          <Route path="/dashboard/profile" element={<ProtectedRoute><DashboardLayout><ProfilePage /></DashboardLayout></ProtectedRoute>} />
 
             {/* Admin Routes */}
             <Route path="/dashboard/admin" element={<AdminRoute><DashboardLayout><AdminDashboard /></DashboardLayout></AdminRoute>} />
