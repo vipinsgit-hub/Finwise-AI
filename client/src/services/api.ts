@@ -54,6 +54,10 @@ export const profileService = {
   upsertProfile: async (profileData: any) => {
     const response = await api.post('/profile', profileData);
     return response.data;
+  },
+  calculateFIRE: async (fireData: any) => {
+    const response = await api.post('/profile/fire', fireData);
+    return response.data;
   }
 };
 
