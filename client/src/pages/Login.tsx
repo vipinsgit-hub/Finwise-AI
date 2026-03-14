@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from '../components/Button';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import SEO from '../components/SEO';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -27,6 +28,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="max-w-md mx-auto my-20 p-8 bg-white rounded-2xl shadow-soft">
+      <SEO title="Login" />
       <h2 className="text-3xl font-bold text-text mb-8">Welcome Back</h2>
       {error && <p className="bg-red-50 text-red-500 p-3 rounded-lg mb-6 text-sm">{error}</p>}
       <form onSubmit={handleSubmit} className="space-y-6">

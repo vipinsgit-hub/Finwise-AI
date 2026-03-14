@@ -1,10 +1,15 @@
 import React from 'react';
 import Button from '../components/Button';
 import { ArrowRight, Shield, Zap, BarChart3 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
+      <SEO 
+        title="Understand Your Money. Improve Your Financial Health" 
+        description="FinWise AI helps you understand your financial health using a FinHealth Score and a FIRE calculator. Simple, beginner-friendly, and powerful."
+      />
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
